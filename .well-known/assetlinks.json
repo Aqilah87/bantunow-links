@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.bantunow.app",
+    "sha256_cert_fingerprints": ["LETAK_SHA256_ANDA_SINI"]
+  }
+}]
