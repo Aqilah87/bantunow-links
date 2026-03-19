@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.bantunow.app",
-    "sha256_cert_fingerprints": ["LETAK_SHA256_ANDA_SINI"]
+    "sha256_cert_fingerprints": ["F6:84:21:3C:AC:7D:21:5C:4D:9A:9C:E6:7E:AA:30:5D:40:C1:B9:89:5B:AD:9F:44:63:ED:A0:74:CF:80:E9:E9"]
   }
 }]
