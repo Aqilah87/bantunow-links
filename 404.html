@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BantuNow</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; background: #f0f4ff;
+           display: flex; justify-content: center;
+           align-items: center; min-height: 100vh; }
+    .card { background: white; border-radius: 20px; padding: 40px 32px;
+            max-width: 380px; width: 90%; text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .icon { font-size: 60px; margin-bottom: 16px; }
+    h1 { color: #1565C0; font-size: 24px; margin-bottom: 8px; }
+    p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+    .btn { display: block; background: #1565C0; color: white;
+           padding: 14px 24px; border-radius: 12px;
+           text-decoration: none; font-weight: bold;
+           font-size: 15px; margin-bottom: 12px; }
+    .note { font-size: 12px; color: #999; margin-top: 16px; }
+  </style>
+  <script>
+    window.onload = function() {
+      var postId = window.location.pathname.split('/').pop();
+      var deepLink = 'intent://aqilah87.github.io/bantunow-links/post/' +
+        postId + '#Intent;scheme=https;package=com.bantunow.app;end';
+      setTimeout(function() { window.location = deepLink; }, 500);
+    }
+  </script>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🤝</div>
+    <h1>BantuNow</h1>
+    <p>Anda dijemput melihat post bantuan ini.<br>
+       Sila buka melalui app BantuNow.</p>
+    <p class="note">Memerlukan app BantuNow untuk melihat post ini.</p>
+  </div>
+</body>
+</html>
