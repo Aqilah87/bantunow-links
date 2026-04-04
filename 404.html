@@ -14,12 +14,14 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
     .icon { font-size: 60px; margin-bottom: 16px; }
     h1 { color: #1565C0; font-size: 24px; margin-bottom: 8px; }
-    p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
-    .btn { display: block; background: #1565C0; color: white;
-           padding: 14px 24px; border-radius: 12px;
-           text-decoration: none; font-weight: bold;
-           font-size: 15px; margin-bottom: 12px; }
-    .note { font-size: 12px; color: #999; margin-top: 16px; }
+    p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+    .btn { display: block; color: white; padding: 14px 24px;
+           border-radius: 12px; text-decoration: none;
+           font-weight: bold; font-size: 15px; margin-bottom: 12px; }
+    .btn-open { background: #1565C0; }
+    .btn-download { background: #25D366; }
+    .divider { color: #ccc; margin: 8px 0; font-size: 13px; }
+    .note { font-size: 11px; color: #aaa; margin-top: 16px; }
   </style>
   <script>
     window.onload = function() {
@@ -27,6 +29,9 @@
       var deepLink = 'intent://aqilah87.github.io/bantunow-links/post/' +
         postId + '#Intent;scheme=https;package=com.bantunow.app;end';
       setTimeout(function() { window.location = deepLink; }, 500);
+
+      // Update open button href
+      document.getElementById('btnOpen').href = deepLink;
     }
   </script>
 </head>
@@ -34,9 +39,23 @@
   <div class="card">
     <div class="icon">🤝</div>
     <h1>BantuNow</h1>
-    <p>Anda dijemput melihat post bantuan ini.<br>
-       Sila buka melalui app BantuNow.</p>
-    <p class="note">Memerlukan app BantuNow untuk melihat post ini.</p>
+    <p>Anda dijemput melihat post bantuan komuniti ini.</p>
+
+    <a id="btnOpen" href="#" class="btn btn-open">
+      📱 Buka dalam App
+    </a>
+
+    <div class="divider">— Belum install? —</div>
+
+    <a href="https://aqilah87.github.io/bantunow-links/app-release.apk"
+       class="btn btn-download">
+      ⬇️ Download BantuNow
+    </a>
+
+    <p class="note">
+      Selepas install, buka semula link ini untuk terus ke post berkenaan.<br><br>
+      ⚠️ Pastikan "Install dari sumber tidak dikenali" dibenarkan dalam tetapan telefon anda.
+    </p>
   </div>
 </body>
 </html>
