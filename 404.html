@@ -6,54 +6,124 @@
   <title>BantuNow</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; background: #f0f4ff;
-           display: flex; justify-content: center;
-           align-items: center; min-height: 100vh; }
-    .card { background: white; border-radius: 20px; padding: 40px 32px;
-            max-width: 380px; width: 90%; text-align: center;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-    .icon { font-size: 60px; margin-bottom: 16px; }
-    h1 { color: #1565C0; font-size: 24px; margin-bottom: 8px; }
-    p { color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-    .btn { display: block; color: white; padding: 14px 24px;
-           border-radius: 12px; text-decoration: none;
-           font-weight: bold; font-size: 15px; margin-bottom: 12px; }
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #e3f0ff 0%, #f0f4ff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(21, 101, 192, 0.15);
+    }
+    .logo { font-size: 64px; margin-bottom: 12px; }
+    h1 { color: #1565C0; font-size: 26px; margin-bottom: 6px; font-weight: 800; }
+    .tagline { color: #888; font-size: 13px; margin-bottom: 20px; }
+    .post-card {
+      background: #f0f4ff;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .post-card p { color: #1565C0; font-size: 13px; margin: 0; }
+    .post-card strong { color: #333; font-size: 15px; display: block; margin-top: 4px; }
+    .btn {
+      display: block;
+      color: white;
+      padding: 15px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 12px;
+      transition: opacity 0.2s;
+    }
+    .btn:active { opacity: 0.8; }
     .btn-open { background: #1565C0; }
-    .btn-download { background: #25D366; }
-    .divider { color: #ccc; margin: 8px 0; font-size: 13px; }
-    .note { font-size: 11px; color: #aaa; margin-top: 16px; }
+    .btn-download { background: #2e7d32; }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 16px 0;
+      color: #ccc;
+      font-size: 12px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #eee;
+    }
+    .note {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1565C0;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
   </style>
   <script>
     window.onload = function() {
       var postId = window.location.pathname.split('/').pop();
       var deepLink = 'intent://aqilah87.github.io/bantunow-links/post/' +
         postId + '#Intent;scheme=https;package=com.bantunow.app;end';
-      setTimeout(function() { window.location = deepLink; }, 500);
 
-      // Update open button href
+      // Update button href
       document.getElementById('btnOpen').href = deepLink;
+
+      // Auto try open app
+      setTimeout(function() {
+        window.location = deepLink;
+      }, 800);
     }
   </script>
 </head>
 <body>
   <div class="card">
-    <div class="icon">🤝</div>
+    <div class="logo">🤝</div>
     <h1>BantuNow</h1>
-    <p>Anda dijemput melihat post bantuan komuniti ini.</p>
+    <div class="tagline">Komuniti Bantuan Kuala Terengganu</div>
+    <span class="badge">📬 Ada post bantuan untuk anda</span>
+
+    <div class="post-card">
+      <p>Anda dijemput melihat:</p>
+      <strong>Post Bantuan Komuniti BantuNow</strong>
+    </div>
 
     <a id="btnOpen" href="#" class="btn btn-open">
-      📱 Buka dalam App
+      📱 Buka dalam App BantuNow
     </a>
 
-    <div class="divider">— Belum install? —</div>
+    <div class="divider">Belum install app?</div>
 
-    <a href="https://aqilah87.github.io/bantunow-links/app-release.apk"
+    <a href="https://github.com/Aqilah87/bantunow-links/releases/download/v1.0.0/app-release.apk"
        class="btn btn-download">
-      ⬇️ Download BantuNow
+      ⬇️ Download BantuNow (APK)
     </a>
 
     <p class="note">
-      Selepas install, buka semula link ini untuk terus ke post berkenaan.<br><br>
+      ① Download & install APK<br>
+      ② Buka semula link ini<br>
+      ③ Terus ke post berkenaan ✅<br><br>
       ⚠️ Pastikan "Install dari sumber tidak dikenali" dibenarkan dalam tetapan telefon anda.
     </p>
   </div>
